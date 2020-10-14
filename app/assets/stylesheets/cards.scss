@@ -1,0 +1,76 @@
+
+
+.all-boards {
+  
+  height: 36px;
+  left: 0%;
+  right: 0%;
+  top: calc(50% - 36px/2);
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 36px;
+  /* identical to box height */
+
+
+  color: #000000;
+
+}
+.card {
+  width: 362px;
+  height: 161px;
+  background: #F4F4F4;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+  
+}
+
+.card_title {
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.card_content {
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  
+
+  color: #000000;
+  mix-blend-mode: normal;
+  
+}
+
+.card_detail {
+  margin-top: 80px;
+
+}
+
+
+.new-card {
+  width: 362px;
+  height: 161px;
+  left: 30px;
+  top: 161px;
+
+  background: #F4F4F4;
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  .add-new-bord {
+    text-align: center;
+    padding-top: 60px;
+
+  }
+
+}
