@@ -4,10 +4,8 @@
       = board.title
     .card_content
       = board.content
+    .dropdown
+      = link_to '編集', edit_board_path(board)
+      = link_to '削除', board_path(board.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか' } 
     .card_detail
       = board.user.email
-    
-        
-     
-    
-          
