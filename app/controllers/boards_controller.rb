@@ -1,19 +1,44 @@
 class BoardsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+
   def index
     @boards = Board.all
   end
 
   def new
-    @board = Board.new
+    @board = current_user.boards.build
+  end
+  
+  def show
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to root_path
+      redirect_to root_path,  notice: '登録できました'
     else
       render :new
     end
+  end
+
+  def edit
+    @board = Board.find(params[:id])
+  end
+
+  def update
+    @board = Board.find(params[:id])
+    if @board.update(board_params)
+      redirect_to root_path, notice: '更新できました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
+  end
+
+  def destroy
+    board = Board.find(params[:id])
+    board.destroy!
+    redirect_to root_path, notice: '削除しました'
   end
 
   private
