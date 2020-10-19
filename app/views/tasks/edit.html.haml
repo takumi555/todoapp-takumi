@@ -1,0 +1,17 @@
+.container
+  %h2 Update Card
+  = form_with model: @task, url: board_task_path(board_id: @task.board_id, id: @task.id),method: 'put', local: true  do |f|
+    %div
+      = f.label :title, 'Title'
+    %div
+      = f.text_field :title, class: 'text'
+    %div
+      = f.label :content, 'Description'
+    %div
+      = f.text_field :content, class: 'text'
+    %div
+      = f.label :deadline, 'Deadline'
+    %div
+      = f.date_field :deadline, class: 'text'
+    %div
+      = f.submit 'Submit', class: 'btn-primary'

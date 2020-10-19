@@ -2,7 +2,6 @@
   %h2.all-boards ALL Boards
   %div.cards 
     - @boards.each do |board|
-      = render 'commons/board', board: board 
-  = link_to new_board_path do 
-    %div.new-card
-      %p.add-new-bord +Add new board
+      = render 'commons/board', board: board  
+  %div.new-board
+    = link_to '+Add new board', new_board_path,  class: 'add-new-board'

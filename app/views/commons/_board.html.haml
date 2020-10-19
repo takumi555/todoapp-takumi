@@ -1,11 +1,11 @@
-.card
-  .card_content
-    .card_title
+= link_to board_path(board) do
+  .board
+    .board_title
       = board.title
-    .card_content
+    .board_content
       = board.content
     .dropdown
-      = link_to '編集', edit_board_path(board)
-      = link_to '削除', board_path(board.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか' } 
-    .card_detail
+      = link_to '編集', edit_board_path(board), class: 'board-text'
+      = link_to '削除', board_path(board.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか' }, class: 'board-text'
+    .board_detail
       = board.user.email

@@ -8,14 +8,16 @@ class BoardsController < ApplicationController
   def new
     @board = current_user.boards.build
   end
-  
+
   def show
+    @board = Board.find(params[:id])
+    @tasks = @board.tasks
   end
 
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to root_path,  notice: '登録できました'
+      redirect_to root_path, notice: '登録できました'
     else
       render :new
     end
@@ -43,6 +45,15 @@ class BoardsController < ApplicationController
 
   private
   def board_params
-    params.require(:board).permit(:title, :content)
+    params.require(:board).permit(:title, :content, :tasks)
   end
+
+  def set_board
+    @board = Board.find(params[:id])
+  end
+
+  def task_params
+    params.require(:task).permit(:title, :content, :deadline)
+  end
+
 end
