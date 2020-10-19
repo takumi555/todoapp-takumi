@@ -1,9 +1,15 @@
 @import 'form';
-@import 'cards';
+@import 'board';
+@import 'card';
 
 .container {
   padding: 16px 16px;
   width: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+
 }
 
 input {
@@ -12,7 +18,7 @@ input {
 
 }
 
-.bords-title {
+.board-title {
   position: absolute;
   margin-left: 10px;
   padding-bottom: 5px;
@@ -24,6 +30,8 @@ input {
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
+  text-decoration: none;
+  color: black;
 }
 
 .loginout {

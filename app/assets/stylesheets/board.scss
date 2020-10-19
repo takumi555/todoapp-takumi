@@ -18,17 +18,16 @@
   color: #000000;
 
 }
-.card {
-  width: 362px;
-  height: 161px;
+.board {
+  width: 340px;
   background: #F4F4F4;
   border-radius: 10px;
   margin-bottom: 20px;
-
+  padding: 10px;
   
 }
 
-.card_title {
+.board_title {
   font-family: Avenir;
   font-style: normal;
   font-weight: normal;
@@ -36,7 +35,7 @@
   
 }
 
-.card_content {
+.board_content {
   font-family: Avenir;
   font-style: normal;
   font-weight: normal;
@@ -45,25 +44,25 @@
   mix-blend-mode: normal;
 }
 
-.card_detail {
+.board_detail {
   
 }
+.board-text {
+  text-decoration: none;
+  color: black;
+}
 
-
-.new-card {
+.new-board {
   width: 362px;
-  height: 161px;
-  left: 30px;
-  top: 161px;
-
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: #F4F4F4;
   border-radius: 10px;
+  
 
-  margin-bottom: 20px;
-
-  .add-new-bord {
-    text-align: center;
-    padding-top: 60px;
+  .add-new-board {
+    text-decoration: none;
+    color: black;
 
   }
 

@@ -1,0 +1,20 @@
+.container
+  %h2.all-boards ALL cards
+  %div.cards
+    - @tasks.each do |task|
+      = link_to board_task_path(board_id: task.board_id, id: task.id) do
+        .board_task
+          - if task.eyecatch.attached?
+            %div.board_task_img
+              = image_tag task.eyecatch
+          .task_title
+            = task.title
+          .task_content
+            = task.content
+          .task_deadline
+            = task.deadline
+          .task_detail
+            = task.user.email
+  %div.new-board
+    = link_to new_board_task_path(@board) do
+      +Add new card

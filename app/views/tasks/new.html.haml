@@ -1,0 +1,21 @@
+.container
+  %h2 New Card
+  = form_with(model: @task, url: board_tasks_path(@task.board),method: 'post', local: true ) do |f|
+    %div
+      = f.label :eyecatch, 'Image'
+    %div
+      = f.file_field :eyecatch 
+    %div
+      = f.label :title, 'Title'
+    %div
+      = f.text_field :title, class: 'text'
+    %div
+      = f.label :content, 'Description'
+    %div
+      = f.text_field :content, class: 'text'
+    %div
+      = f.label :deadline, 'Deadline'
+    %div
+      = f.date_field :deadline, class: 'text'
+    %div
+      = f.submit 'Submit', class: 'btn-primary'
