@@ -16,9 +16,10 @@ class BoardsController < ApplicationController
 
   def create
     @board = current_user.boards.build(board_params)
-    if @board.save
+    if @board.save!
       redirect_to root_path, notice: '登録できました'
     else
+      flash.now[:error] = '登録できませんでした'
       render :new
     end
   end
@@ -45,7 +46,7 @@ class BoardsController < ApplicationController
 
   private
   def board_params
-    params.require(:board).permit(:title, :content, :tasks)
+    params.require(:board).permit(:title, :content, :tasks, :eyecatch)
   end
 
   def set_board
@@ -53,7 +54,7 @@ class BoardsController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :content, :deadline)
+    params.require(:task).permit(:title, :content, :deadline, :eyecatch)
   end
 
 end

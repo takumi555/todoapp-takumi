@@ -1,22 +1,20 @@
 .container
   .task_show
+    .task_title 
+      = @task.title
+    .dropdown
+      = image_tag 'combinedshape.png', class: 'task-dropbtn'
+      .dropdown-content
+        = link_to '編集する', edit_board_task_path(@task)
+        = link_to '削除する', board_task_path(@task), data: { method: 'delete', confirm: '本当によろしいですか'}
     -if @task.eyecatch&.attached?
       .task_image
         = image_tag @task.eyecatch
-    .task_title
-      = @task.title
     .task_content
       = @task.content
     .task_detail
       %div
-        %p= @task.user.email
-        %p= @task.deadline
-
-    - if user_signed_in? 
-      .task_detail_actions
-        .dropdown
-          = link_to '編集する', edit_board_task_path(@task)
-          = link_to '削除する', board_task_path(@task), data: { method: 'delete', confirm: '本当によろしいですか'}
+        %p= @task.deadline.strftime('%Y/%m/%d') 
 
     %h3 Comment
     .comment-table

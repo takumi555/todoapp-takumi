@@ -2,10 +2,15 @@
   .board
     .board_title
       = board.title
+    .dropdown
+      = image_tag 'combinedshape.png', class: 'task-dropbtn'
+      .dropdown-content
+        = link_to '編集する', edit_board_path(board), class: 'board-text'
+        = link_to '削除する', board_path(board.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか' }, class: 'board-text'
+    - if board.eyecatch.attached?
+      %div.board_task_img
+        = image_tag board.eyecatch
     .board_content
       = board.content
-    .dropdown
-      = link_to '編集', edit_board_path(board), class: 'board-text'
-      = link_to '削除', board_path(board.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか' }, class: 'board-text'
     .board_detail
       = board.user.email

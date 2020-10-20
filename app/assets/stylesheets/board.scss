@@ -25,39 +25,67 @@
   margin-bottom: 20px;
   padding: 10px;
   
-}
 
-.board_title {
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
+  .board_title {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+    float: left;
+   
+    
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 10px;
+    float: right;
+    top: 9px;
+    margin-right: 20px;
+  }
+
   
-}
 
-.board_content {
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  color: #000000;
-  mix-blend-mode: normal;
-}
+  .board_task_img{
+    text-align: center;
 
-.board_detail {
+    img {
+      width: 95%;
+      border-radius: 10px;
   
-}
-.board-text {
-  text-decoration: none;
-  color: black;
+    }
+  }
+
+
+  .board_content {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    margin: 10px 0;
+    clear: both;
+    
+  }
+
+  .board_detail{
+    margin-bottom: 5px;
+
+  }
+
 }
 
 .new-board {
   width: 362px;
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #F4F4F4;
   border-radius: 10px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
   
 
   .add-new-board {
