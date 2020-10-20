@@ -10,7 +10,7 @@
     .task_detail
       %div
         %p= @task.user.email
-        %p= @task.created_at
+        %p= @task.deadline
 
     - if user_signed_in? 
       .task_detail_actions
@@ -18,4 +18,14 @@
           = link_to '編集する', edit_board_task_path(@task)
           = link_to '削除する', board_task_path(@task), data: { method: 'delete', confirm: '本当によろしいですか'}
 
-  %h2 コメント一覧
+    %h3 Comment
+    .comment-table
+      - @comments.each do |comment|
+        .task_comment
+          %p= comment.content
+
+    %div.new-comment
+      = link_to new_board_task_comment_path(board_id: @task.board_id,task_id: @task.id) do 
+        +Add new comment
+
+
