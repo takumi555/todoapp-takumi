@@ -16,6 +16,12 @@
           = link_to 'ログアウト', destroy_user_session_path, data: {method: 'DELETE'}, class: 'loginout btn btn-danger '
         - else 
           = link_to 'ログイン', new_user_session_path, class: 'loginout btn btn-danger'
-    
+  
+
     .container
+      - if flash.present?
+        .flash
+          - flash.each do |key, value|
+            %div{:class => key}= value
+
       = yield

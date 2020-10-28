@@ -2,6 +2,7 @@
   %h2.signup-title Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
+
     .field
       = f.label :email
       %br/
@@ -18,4 +19,4 @@
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text'
     .actions
-      = f.submit "Submit", class: 'tag btn btn-danger'
+      = f.submit "Submit", class: 'submit-btn btn btn-danger'
